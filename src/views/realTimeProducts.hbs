@@ -1,0 +1,57 @@
+<form id="formProduct" class="text-center">
+    <h3>Real Time Products</h3>
+    <div class="container-lg d-flex justify-content-evenly align-items-center flex-wrap">
+        <div class="col-5 m-2">
+            <label for="title">Nombre del producto</label>
+            <input class="controls form-control" type="text" name="title" id="title"
+                placeholder="Ingrese Nombre del Producto" required />
+        </div>
+        <div class="col-5 m-2">
+            <label for="description">Descripción</label>
+            <input class="controls form-control" type="text" name="description" id="description"
+                placeholder="Ingrese description" required />
+        </div>
+        <div class="col-5 m-2">
+            <label for="stock">Stock disponible</label>
+            <input class="controls form-control" type="number" name="stock" id="stock"
+                placeholder="Ingrese su stock" required />
+        </div>
+        <div class="col-5 m-2">
+            <label for="thumbnail">La ruta del archivo</label>
+            <input class="controls form-control" type="text" name="thumbnail" id="thumbnail"
+                placeholder="Ingrese su imagen url" required />
+        </div>
+        <div class="col-5 m-2">
+            <label for="category">Categoría</label>
+            <input class="controls form-control" type="text" name="category" id="category"
+                placeholder="Ingrese categoria" required />
+        </div>
+        <div class="col-5 m-2">
+            <label for="price">Precio del producto</label>
+            <input class="controls form-control" type="number" name="price" id="price"
+                placeholder="Ingrese su precio" required />
+        </div>
+        <div class="col-12 m2">
+        <button class="botons btn btn-primary" type="submit" id="add-btn">Registrar
+        </button>
+        </div>
+
+    </div>
+</form>
+<form class="text-center">
+    <h3> Para eliminar un producto:</h3>
+    <div class="container-lg d-flex justify-content-evenly align-items-center flex-wrap">
+        <div class="col-6">
+            <label for="id-prod">ID del producto a eliminar</label>
+            <input class="controls form-control mb-3" type="number" name="id-prod" id="id-prod"
+                placeholder="Ingrese ID" />
+        </div>
+
+        <button class="botons btn btn-danger" type="button" id="delete-btn">Eliminar</button>
+    </div>
+</form>
+<article id="list-products" class="container">
+</article>
+
+<script src="/socket.io/socket.io.js"></script>
+<script src="/js/realtime.js"></script>

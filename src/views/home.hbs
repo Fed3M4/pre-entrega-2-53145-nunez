@@ -1,0 +1,15 @@
+<div>
+    <h1>¡Estos son los productos que tenemos para ofrecerte!</h1>
+    {{#if products}}
+        <div class="container">
+        {{#each products}}
+            <div class="card mb-2">
+                <p>Producto: {{this.title}}</p>
+                <p>Precio: {{this.price}}</p>
+                <p>Cantidad disponible: {{this.stock}}</p>
+            </div>
+        {{/each}}
+        </div>
+    {{/if}}
+</div>
+<script src="js/index.js"></script>

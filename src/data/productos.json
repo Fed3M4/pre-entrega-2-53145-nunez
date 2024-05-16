@@ -1,0 +1,108 @@
+[
+	{
+		"id": 2,
+		"title": "Botas",
+		"description": "Devestir",
+		"price": 12000,
+		"thumbnail": "/imagenes",
+		"code": " QAx7kWkjk",
+		"stock": 20
+	},
+	{
+		"id": 3,
+		"title": "Zapatos",
+		"description": "Devestir",
+		"price": 12000,
+		"thumbnail": "/imagenes",
+		"code": " NuS1gAdrv",
+		"stock": 20
+	},
+	{
+		"id": 4,
+		"title": "remera",
+		"description": "para invierno",
+		"price": "15200",
+		"stock": "20",
+		"category": "Ropa",
+		"thumbnail": "c/remera.png",
+		"status": true,
+		"code": " 8kI9Of5yf"
+	},
+	{
+		"id": 5,
+		"title": "pantalon corto",
+		"description": "de futbol",
+		"price": "135445",
+		"status": true,
+		"stock": "123",
+		"category": "deportes",
+		"thumbnail": "c/messi.png",
+		"code": " wYKVN340k"
+	},
+	{
+		"id": 6,
+		"title": "pantalon",
+		"description": "Largo de invierno",
+		"price": 45000,
+		"status": true,
+		"stock": 20,
+		"category": "Ropa de invierno",
+		"thumbnail": "/fotos",
+		"code": " ZUZR6m0OM"
+	},
+	{
+		"id": 7,
+		"title": "campera",
+		"description": "De invierno",
+		"price": 90000,
+		"status": true,
+		"stock": 10,
+		"category": "Ropa de invierno",
+		"thumbnail": "/fotos",
+		"code": " qFV3y0Pjt"
+	},
+	{
+		"id": 8,
+		"title": "guantes",
+		"description": "De invierno",
+		"price": 15000,
+		"status": true,
+		"stock": 50,
+		"category": "Ropa de invierno",
+		"thumbnail": "/fotos",
+		"code": " PJN5gHrs1"
+	},
+	{
+		"id": 9,
+		"title": "medias",
+		"description": "De invierno",
+		"price": 15000,
+		"status": true,
+		"stock": 50,
+		"category": "Ropa de invierno",
+		"thumbnail": "/fotos",
+		"code": " cYai2Xtzu"
+	},
+	{
+		"id": 10,
+		"title": "pantuflas",
+		"description": "De invierno",
+		"price": 23000,
+		"status": true,
+		"stock": 5,
+		"category": "Ropa de invierno",
+		"thumbnail": "/fotos",
+		"code": " uPQrv1GOY"
+	},
+	{
+		"id": 11,
+		"title": "pantuflas",
+		"description": "De invierno",
+		"price": 23000,
+		"status": true,
+		"stock": 5,
+		"category": "Ropa de invierno",
+		"thumbnail": "/fotos",
+		"code": " kOlVicxAA"
+	}
+]

@@ -1,0 +1,23 @@
+{
+  "name": "pre-entrega-2-53145-nunez",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "node --watch src/app.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cookie-parser": "^1.4.6",
+    "express": "^4.19.2",
+    "express-handlebars": "^6.0.7",
+    "express-session": "^1.18.0",
+    "mongoose": "^8.3.3",
+    "mongoose-paginate-v2": "^1.8.0",
+    "multer": "^1.4.5-lts.1",
+    "socket.io": "^4.7.5"
+  }
+}
