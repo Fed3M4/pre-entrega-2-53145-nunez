@@ -1,17 +1,20 @@
-import {productModel} from '../../models/products.model.js'
 import { getRandomCode } from '../../../utils/functions.js';
+import { productModel } from '../../models/products.model.js';
 
 export default class ProductManagerMongo {
     constructor(){
         this.model = productModel
     }
-    async categories(){
+    async categories(limit=10){
         try {
             const categories = await productModel.aggregate([
                 {
                     $group: {
                         _id: null,
-                        categories: {$addToSet: "$category"}
+                        categories: {$addToSet: "$category"},
+                    },
+                    $limit: {
+                        
                     }
                 }
             ])
@@ -21,14 +24,22 @@ export default class ProductManagerMongo {
         }
     }
 
-    async getProducts(filter, options){
-        try {
-            // const products = await this.model.find({}).lean()
-            return await productModel.paginate(filter, options)
-          } catch (error) {
-            console.error('No se pudo obtener los productos');
-            throw error
-          }
+    async getProducts({ limit = 10, page = 1, sort, query }){
+        const searchQuery = {};
+        if (query) {
+          searchQuery.$or = [
+            { category: { $regex: query, $options: 'i' } },
+            { name: { $regex: query, $options: 'i' } }
+          ];
+        }
+      
+        const options = {
+          page: parseInt(page, 10),
+          limit: parseInt(limit, 10),
+          sort: sort ? { price: sort === 'asc' ? 1 : -1 } : {}
+        };
+      
+        return await this.model.paginate(searchQuery, options);
     }
 
     /**

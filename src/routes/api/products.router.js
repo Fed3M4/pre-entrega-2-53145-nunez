@@ -5,16 +5,29 @@ import { pmMongo } from '../../dao/managers/index.js';
 const router = Router()
 const productService = pmMongo
 
-router.get('/', async (req, res) =>{
-    try {
-        const products = await productService.getProducts()
-        const limit = req.query.limit;
-        if(!limit) return res.send(products);
-        res.send(products.slice(0, limit));
-    } catch (error) {
-        console.error('No se pudieron cargar los pruductos por el error: ', error.message)
-    }
-})
+router.get('/', async (req, res) => {
+  try {
+    const { limit, page, sort, query } = req.query;
+    
+    const products = await pmMongo.getProducts({ limit, page, sort, query });
+
+    res.json({
+      docs: products.docs,
+      limit: products.limit,
+      page: products.page,
+      totalPages: products.totalPages,
+      prevPage: products.prevPage,
+      nextPage: products.nextPage,
+      hasPrevPage: products.hasPrevPage,
+      hasNextPage: products.hasNextPage,
+      prevLink: products.hasPrevPage ? `/products?page=${products.prevPage}&limit=${limit}&sort=${sort}&query=${query}` : null,
+      nextLink: products.hasNextPage ? `/products?page=${products.nextPage}&limit=${limit}&sort=${sort}&query=${query}` : null,
+    });
+  } catch (error) {
+    console.error('Error al cargar los productos:', error);
+    res.status(500).send({ status: 'error', message: 'Error al cargar los productos' });
+  }
+});
 
 router.get('/:pid', async(req, res) => {
     try {
